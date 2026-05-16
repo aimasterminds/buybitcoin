@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuyBTC — Compare the safest ways to buy Bitcoin</title>
+  <meta name="description" content="Compare beginner-friendly Bitcoin exchanges, learn how to buy safely, and choose the right wallet with clear, transparent guidance." />
+  <meta property="og:title" content="BuyBTC — Compare the safest ways to buy Bitcoin" />
+  <meta property="og:description" content="A beginner-first Bitcoin comparison and education site with clear reviews, fee guidance, and wallet recommendations." />
+  <meta name="theme-color" content="#081a1f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=boska@400,500,700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --font-body: 'Satoshi', Inter, sans-serif;
+      --font-display: 'Boska', Georgia, serif;
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --color-bg: #f7f6f2;
+      --color-hero-start: #081a1f;
+      --color-hero-end: #0f2b3a;
+      --color-surface: #f9f8f5;
+      --color-surface-2: #fbfbf9;
+      --color-surface-offset: #f1eee9;
+      --color-border: #d7d2ca;
+      --color-divider: #dfd9d1;
+      --color-text: #221f19;
+      --color-text-muted: #66635d;
+      --color-text-faint: #9b978f;
+      --color-text-inverse: #faf8f4;
+      --color-primary: #01696f;
+      --color-primary-hover: #0c4e54;
+      --color-primary-highlight: #d6e6e4;
+      --color-bitcoin: #c78314;
+      --color-bitcoin-soft: #f3e2c4;
+      --shadow-sm: 0 1px 2px rgba(24, 17, 11, 0.06);
+      --shadow-md: 0 14px 40px rgba(24, 17, 11, 0.08);
+      --radius-sm: .375rem; --radius-md: .625rem; --radius-lg: 1rem; --radius-xl: 1.25rem; --radius-full: 9999px;
+      --content: 1180px;
+    }
+    [data-theme="dark"] {
+      --color-bg: #181715;
+      --color-surface: #211f1c;
+      --color-surface-2: #262420;
+      --color-surface-offset: #2c2925;
+      --color-border: #3d3934;
+      --color-divider: #34312d;
+      --color-text: #ece7df;
+      --color-text-muted: #b8b1a7;
+      --color-text-faint: #8d867d;
+      --color-text-inverse: #171512;
+      --color-primary: #4f98a3;
+      --color-primary-hover: #69adb6;
+      --color-primary-highlight: #273739;
+      --color-bitcoin: #e0aa4e;
+      --color-bitcoin-soft: #3f3320;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.24);
+      --shadow-md: 0 14px 40px rgba(0,0,0,.34);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-height: 100vh; font-family: var(--font-body); font-size: var(--text-base); line-height: 1.65; background: var(--color-bg); color: var(--color-text); }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    button { font: inherit; }
+    .skip-link { position: absolute; left: 1rem; top: -3rem; background: var(--color-primary); color: var(--color-text-inverse); padding: .75rem 1rem; border-radius: var(--radius-md); z-index: 100; }
+    .skip-link:focus { top: 1rem; }
+    .container { width: min(calc(100% - 2rem), var(--content)); margin: 0 auto; }
+    .site-header { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(16px); background: color-mix(in srgb, var(--color-bg) 88%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); min-height: 76px; }
+    .brand { display: inline-flex; align-items: center; gap: .875rem; font-weight: 700; }
+    .brand-mark { width: 40px; height: 40px; padding: 8px; border-radius: 12px; background: linear-gradient(135deg, var(--color-primary-highlight), var(--color-surface-2)); border: 1px solid color-mix(in srgb, var(--color-primary) 18%, var(--color-border)); box-shadow: var(--shadow-sm); }
+    .brand-text small { display: block; color: var(--color-text-muted); font-size: var(--text-xs); font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 1.25rem; color: var(--color-text-muted); }
+    .nav-links a:hover { color: var(--color-text); }
+    .nav-actions { display: flex; align-items: center; gap: .75rem; }
+    .theme-toggle, .menu-toggle { width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text); display: inline-grid; place-items: center; cursor: pointer; }
+    .menu-toggle { display: none; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 48px; padding: 0 1rem; border-radius: var(--radius-full); border: 1px solid transparent; font-size: var(--text-sm); font-weight: 700; cursor: pointer; }
+    .btn-primary { background: var(--color-primary); color: var(--color-text-inverse); }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-secondary { background: var(--color-surface); border-color: var(--color-border); color: var(--color-text); }
+    .eyebrow { display: inline-flex; align-items: center; gap: .5rem; padding: .45rem .8rem; border-radius: var(--radius-full); background: var(--color-bitcoin-soft); color: color-mix(in srgb, var(--color-text) 75%, var(--color-bitcoin)); font-size: var(--text-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .hero { padding: clamp(3rem, 8vw, 7rem) 0 3rem; background: radial-gradient(circle at 20% 20%, rgba(201,135,20,.12), transparent 28%), linear-gradient(135deg, color-mix(in srgb, var(--color-hero-start) 92%, black), color-mix(in srgb, var(--color-hero-end) 92%, black)); color: #f7f4ef; }
+    .hero-grid { display: grid; gap: var(--space-10); align-items: center; grid-template-columns: 1.1fr .9fr; }
+    h1, h2 { font-family: var(--font-display); letter-spacing: -.03em; margin: 0; }
+    h1 { font-size: var(--text-2xl); line-height: 1; max-width: 11ch; }
+    h2 { font-size: var(--text-xl); margin-bottom: 1rem; }
+    .hero p { color: rgba(255,255,255,.78); max-width: 60ch; }
+    .hero-copy { display: grid; gap: var(--space-6); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .875rem; }
+    .hero-notes { display: flex; flex-wrap: wrap; gap: 1rem; color: var(--color-text-muted); font-size: var(--text-sm); }
+    .hero-card { background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.06)); color: #fff; backdrop-filter: blur(18px); border: 1px solid var(--color-border); border-radius: 28px; padding: var(--space-6); box-shadow: var(--shadow-md); position: relative; overflow: hidden; }
+    .hero-card::after { content: ""; position: absolute; inset: auto -10% -30% auto; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(224,170,78,.34), transparent 68%); }
+    .panel { background: var(--color-surface); border: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); }
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-top: 1rem; }
+    .stat { padding: 1rem; border-radius: 18px; background: color-mix(in srgb, var(--color-surface-offset) 78%, white); border: 1px solid color-mix(in srgb, var(--color-border) 65%, transparent); }
+    .stat strong { display: block; font-size: 1.4rem; margin-bottom: .25rem; }
+    .section { padding: clamp(2.75rem, 5vw, 5rem) 0; }
+    .section-head { display: flex; justify-content: space-between; gap: 1rem; align-items: end; margin-bottom: 1.5rem; }
+    .section-head p { color: var(--color-text-muted); max-width: 60ch; margin: 0; }
+    .trust-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .trust-item, .path-card, .wallet-card, .article-card, .faq-item, .disclosure, .cta-panel { background: var(--color-surface); border: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent); border-radius: var(--radius-xl); }
+    .trust-item { padding: 1.15rem; }
+    .trust-item span { color: var(--color-text-faint); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+    .trust-item strong { display: block; margin-top: .5rem; }
+    .comparison-wrap { overflow-x: auto; border-radius: 24px; border: 1px solid var(--color-border); background: var(--color-surface); box-shadow: var(--shadow-sm); }
+    table { width: 100%; border-collapse: collapse; min-width: 760px; }
+    th, td { padding: 1rem 1.1rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--color-divider); }
+    th { font-size: var(--text-xs); color: var(--color-text-muted); letter-spacing: .08em; text-transform: uppercase; }
+    td strong { display: block; margin-bottom: .25rem; }
+    .pill { display: inline-flex; padding: .35rem .65rem; border-radius: 999px; font-size: var(--text-xs); font-weight: 700; background: var(--color-primary-highlight); color: var(--color-primary); }
+    .disclosure { margin-top: 1rem; padding: 1rem 1.15rem; color: var(--color-text-muted); font-size: var(--text-sm); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .path-card, .wallet-card, .article-card { padding: 1.4rem; }
+    .path-card h3, .wallet-card h3, .article-card h3, .faq-item summary { margin: 0 0 .75rem; font-size: 1.1rem; }
+    .path-card p, .wallet-card p, .article-card p { color: var(--color-text-muted); margin: 0 0 1rem; }
+    .mini-link { color: var(--color-primary); font-weight: 700; }
+    .feature-split { display: grid; grid-template-columns: .95fr 1.05fr; gap: 1rem; align-items: stretch; }
+    .editorial-card { padding: 1.5rem; background: linear-gradient(155deg, color-mix(in srgb, var(--color-surface) 92%, white), var(--color-surface-offset)); border: 1px solid var(--color-border); border-radius: var(--radius-xl); }
+    .check-list { display: grid; gap: .9rem; padding: 0; list-style: none; }
+    .check-list li { display: flex; gap: .75rem; color: var(--color-text-muted); }
+    .check-list li::before { content: ""; flex: 0 0 10px; height: 10px; border-radius: 50%; background: var(--color-primary); margin-top: .55rem; }
+    .faq-list { display: grid; gap: .85rem; }
+    .faq-item summary { list-style: none; cursor: pointer; padding: 1.1rem 1.2rem; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item div { padding: 0 1.2rem 1.2rem; color: var(--color-text-muted); }
+    .cta-panel { padding: clamp(1.5rem, 3vw, 2rem); display: grid; grid-template-columns: 1.2fr .8fr; gap: 1rem; align-items: center; }
+    .newsletter-form { display: flex; gap: .75rem; flex-wrap: wrap; }
+    input[type="email"] { flex: 1 1 260px; min-height: 52px; padding: 0 1rem; border-radius: 999px; border: 1px solid var(--color-border); background: var(--color-surface-2); }
+    .site-footer { padding: 2rem 0 3rem; border-top: 1px solid var(--color-divider); }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 1rem; }
+    .footer-grid p, .footer-grid a { color: var(--color-text-muted); }
+    .footer-col { display: grid; gap: .65rem; align-content: start; }
+    .mobile-panel { display: contents; }
+    @media (max-width: 980px) {
+      .hero-grid, .feature-split, .cta-panel, .footer-grid, .trust-strip, .grid-3 { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; position: absolute; left: 1rem; right: 1rem; top: calc(100% + .75rem); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 20px; padding: 1rem; box-shadow: var(--shadow-md); flex-direction: column; align-items: flex-start; }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: inline-grid; }
+    }
+    @media (max-width: 720px) {
+      .hero-grid, .feature-split, .cta-panel, .footer-grid, .trust-strip, .grid-3, .stat-row { grid-template-columns: 1fr; }
+      .nav { min-height: 70px; }
+      h1 { max-width: 12ch; }
+      .hero { padding-top: 2rem; }
+      .hero-actions, .newsletter-form { flex-direction: column; }
+      .btn, input[type="email"] { width: 100%; }
+      .section-head { flex-direction: column; align-items: start; }
+    }
+  
+    .tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+    .tech-chip{padding:1rem;border-radius:20px;border:1px solid rgba(255,255,255,.15);background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.04));backdrop-filter:blur(16px)}
+    .tech-chip strong{display:block;margin-bottom:.35rem;font-size:1rem}
+    .tech-chip span{color:rgba(255,255,255,.75);font-size:.95rem}
+    .hero-card .stat{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:#fff}
+    .hero-card .stat span{color:rgba(255,255,255,.78)}
+    .hero-card .pill{background:rgba(224,170,78,.18);color:#f7d18a}
+    .hero-card h2,.hero-card p{position:relative;z-index:1}
+
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="BuyBTC home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M12 2v20"></path>
+            <path d="M8 6.5h5.3a3.2 3.2 0 0 1 0 6.4H8h6.1a3.3 3.3 0 0 1 0 6.6H8"></path>
+          </svg>
+        </span>
+        <span class="brand-text">BuyBTC<small>Beginner-first Bitcoin guide</small></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="#compare">Compare exchanges</a>
+        <a href="#learn">How to buy</a>
+        <a href="#wallets">Wallets</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">☾</button>
+        <a class="btn btn-primary" href="#compare">Start comparing</a>
+        <button class="menu-toggle" type="button" id="menuToggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow" style="background:rgba(255,255,255,.12); color:rgba(255,255,255,.92);">Transparent affiliate disclosures • Beginner-focused</span>
+          <h1>Compare the safest ways to buy Bitcoin without the noise.</h1>
+          <p>BuyBTC helps first-time buyers choose an exchange, understand fees, and pick a wallet with calm, practical guidance. No trading hype, no fake urgency, just clear next steps and transparent recommendations. Explore the best platforms, fees, wallets, and security essentials in one place.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#compare">Compare exchanges</a>
+            <a class="btn btn-secondary" href="#learn">Read the beginner guide</a>
+          </div>
+          <div class="hero-notes">
+            <span>Editorially reviewed for beginner usability.</span>
+            <span>Disclosures shown near recommendations.</span>
+            <span>Designed for mobile-first decision making.</span>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Featured comparison summary">
+          <span class="pill">Best next step for most beginners</span>
+          <h2 style="margin-top:1rem;">Start with a simple exchange comparison, not a prediction article.</h2>
+          <p style="margin-top:.75rem; color:var(--color-text-muted);">The fastest path to action is helping visitors compare fees, ease of use, and wallet support in one place.</p>
+          <div class="stat-row">
+            <div class="stat"><strong>3</strong><span>Top beginner-friendly exchange picks</span></div>
+            <div class="stat"><strong>1</strong><span>Simple buying guide with step-by-step flow</span></div>
+            <div class="stat"><strong>2</strong><span>Wallet paths: easy and self-custody</span></div>
+          </div>
+        
+          <div class="tech-grid">
+            <div class="tech-chip"><strong>On-chain aware</strong><span>Learn when custody matters and why fees change.</span></div>
+            <div class="tech-chip"><strong>AI-ready guidance</strong><span>Clear comparisons, smarter decisions, less overwhelm.</span></div>
+            <div class="tech-chip"><strong>Mobile-first UX</strong><span>Designed for fast decisions on any screen.</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container trust-strip">
+        <div class="trust-item"><span>Disclosure</span><strong>We may earn a commission from qualifying links at no extra cost to you.</strong></div>
+        <div class="trust-item"><span>Audience</span><strong>Built for cautious beginners who want a clear first step into Bitcoin.</strong></div>
+        <div class="trust-item"><span>Method</span><strong>Recommendations prioritize ease of use, transparency, fees, and wallet support.</strong></div>
+        <div class="trust-item"><span>Positioning</span><strong>This is educational content, not financial, tax, or investment advice.</strong></div>
+      </div>
+    </section>
+
+    <section class="section" id="compare">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Core comparison</span>
+            <h2>Where most visitors should begin</h2>
+          </div>
+          <p>A good BuyBTC homepage should answer the first buyer question immediately: which platform feels easiest, safest, and most transparent for a beginner.</p>
+        </div>
+        <div class="comparison-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>Best for</th>
+                <th>Strengths</th>
+                <th>Watch for</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Exchange A</strong><span class="pill">Most beginner-friendly</span></td>
+                <td>First purchase</td>
+                <td>Simple onboarding, clear interface, recurring buys.</td>
+                <td>Not always the lowest fee option.</td>
+                <td><a class="btn btn-primary" href="#">Read review</a></td>
+              </tr>
+              <tr>
+                <td><strong>Exchange B</strong><span class="pill">Best fee visibility</span></td>
+                <td>Cost-conscious buyers</td>
+                <td>Good fee transparency, stronger learning resources.</td>
+                <td>Interface can feel slightly less friendly.</td>
+                <td><a class="btn btn-secondary" href="#">Compare fees</a></td>
+              </tr>
+              <tr>
+                <td><strong>Exchange C</strong><span class="pill">Best app experience</span></td>
+                <td>Mobile users</td>
+                <td>Fast signup flow, polished app, easy recurring purchases.</td>
+                <td>Feature depth may be lighter for advanced users.</td>
+                <td><a class="btn btn-secondary" href="#">See details</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="disclosure">Disclosure: BuyBTC may earn affiliate commissions when you sign up through some links. Recommendations are selected to be clear and useful for beginners, not because one platform pays more.</div>
+      </div>
+    </section>
+
+    <section class="section" id="learn">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Beginner path</span>
+            <h2>Three clear paths through the site</h2>
+          </div>
+          <p>Instead of overwhelming visitors with every crypto topic, guide them into the one decision they need to make next.</p>
+        </div>
+        <div class="grid-3">
+          <article class="path-card">
+            <h3>I want to buy Bitcoin today</h3>
+            <p>Go straight to exchange comparisons, fee breakdowns, and beginner-friendly signup guidance.</p>
+            <a class="mini-link" href="#compare">Start with exchange comparisons</a>
+          </article>
+          <article class="path-card">
+            <h3>I need to understand safety first</h3>
+            <p>Learn the difference between keeping Bitcoin on an exchange and moving it to a wallet.</p>
+            <a class="mini-link" href="#wallets">See wallet basics</a>
+          </article>
+          <article class="path-card">
+            <h3>I want the easiest long-term setup</h3>
+            <p>Use a simple recurring-buy approach and choose storage that matches your comfort level.</p>
+            <a class="mini-link" href="#newsletter">Get the beginner checklist</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="wallets">
+      <div class="container feature-split">
+        <div class="editorial-card">
+          <span class="eyebrow">Wallet guidance</span>
+          <h2 style="margin-top:1rem;">Help users decide whether they need a wallet yet.</h2>
+          <p style="color:var(--color-text-muted);">A high-performing beginner site should not force advanced behavior too early. First explain the trade-off between convenience and self-custody, then recommend the right next step.</p>
+          <ul class="check-list">
+            <li>Explain when leaving Bitcoin on an exchange may be acceptable for a small starter amount.</li>
+            <li>Show when moving to a wallet becomes the safer long-term choice.</li>
+            <li>Separate “easy mobile wallet” from “more secure hardware wallet” recommendations.</li>
+          </ul>
+        </div>
+        <div class="grid-3">
+          <article class="wallet-card">
+            <h3>Starter wallet</h3>
+            <p>Best for someone buying their first small amount and learning the basics.</p>
+            <a class="mini-link" href="#">View simple wallet picks</a>
+          </article>
+          <article class="wallet-card">
+            <h3>Hardware wallet</h3>
+            <p>Best for buyers ready to take long-term storage and self-custody seriously.</p>
+            <a class="mini-link" href="#">Compare hardware options</a>
+          </article>
+          <article class="wallet-card">
+            <h3>Security guide</h3>
+            <p>Understand seed phrases, 2FA, scams, and common beginner mistakes.</p>
+            <a class="mini-link" href="#faq">Read FAQs</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Why trust us</span>
+            <h2>Trust architecture that belongs above the fold</h2>
+          </div>
+          <p>Financial websites perform better when they clearly explain who they help, how they review options, and how they make money.</p>
+        </div>
+        <div class="grid-3">
+          <article class="article-card">
+            <h3>Clear review criteria</h3>
+            <p>Each recommendation should explain usability, fee visibility, support, and wallet options in plain language.</p>
+          </article>
+          <article class="article-card">
+            <h3>Visible disclosures</h3>
+            <p>Disclosures should appear near recommendation blocks and calls to action, not only in the footer.</p>
+          </article>
+          <article class="article-card">
+            <h3>Calm design</h3>
+            <p>The visual system should feel more like a financial education publisher than a trading app or meme coin brand.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">FAQ</span>
+            <h2>Questions a first-time buyer actually asks</h2>
+          </div>
+          <p>The best conversion content removes uncertainty before asking for the click.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Is it safe to buy Bitcoin on an exchange?<span>+</span></summary>
+            <div>It can be, if you choose a reputable platform, enable strong account security, and understand when to move funds to a wallet. A beginner site should explain those steps clearly before pushing a signup.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Should I keep Bitcoin on the exchange or move it to a wallet?<span>+</span></summary>
+            <div>That depends on your amount, goals, and comfort level. For small starter purchases, ease may matter most. For larger or longer-term holdings, wallet education becomes more important.</div>
+          </details>
+          <details class="faq-item">
+            <summary>How does BuyBTC make money?<span>+</span></summary>
+            <div>BuyBTC may earn affiliate commissions from some recommendations. To keep trust high, the disclosure should appear close to recommendation blocks and comparison tables.</div>
+          </details>
+          <details class="faq-item">
+            <summary>What is the first page I should read before buying?<span>+</span></summary>
+            <div>Most visitors should start with the exchange comparison page, then read the beginner buying guide and wallet basics before making a final choice.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="newsletter">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <span class="eyebrow">Lead magnet</span>
+            <h2 style="margin-top:1rem;">Offer a beginner checklist, not hype.</h2>
+            <p style="color:var(--color-text-muted);">A free checklist like “Buy Bitcoin Safely: 7 Steps for First-Time Buyers” fits this brand better than aggressive promotional copy and gives you a clean email capture path.</p>
+          </div>
+          <form class="newsletter-form" action="#" method="post">
+            <label class="sr-only" for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email for the checklist" />
+            <button class="btn btn-primary" type="submit">Send me the checklist</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <strong>BuyBTC</strong>
+        <p>A professional Bitcoin comparison and education brand built around beginner clarity, transparent disclosures, and practical next steps.</p>
+      </div>
+      <div class="footer-col">
+        <strong>Explore</strong>
+        <a href="#compare">Compare exchanges</a>
+        <a href="#wallets">Wallets</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <strong>Policy</strong>
+        <a href="#">Affiliate disclosure</a>
+        <a href="#">Risk disclaimer</a>
+        <a href="#">Privacy policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const toggle = document.querySelector('[data-theme-toggle]');
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      const setToggle = () => { toggle.textContent = theme === 'dark' ? '☀' : '☾'; };
+      setToggle();
+      toggle.addEventListener('click', () => { theme = theme === 'dark' ? 'light' : 'dark'; root.setAttribute('data-theme', theme); setToggle(); });
+      menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      document.querySelectorAll('.faq-item').forEach(item => item.addEventListener('toggle', () => {
+        const icon = item.querySelector('summary span');
+        icon.textContent = item.open ? '−' : '+';
+      }));
+    })();
+  </script>
+</body>
+</html>
